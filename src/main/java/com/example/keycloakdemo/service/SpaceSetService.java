@@ -1,6 +1,6 @@
 package com.example.keycloakdemo.service;
 
-import com.example.keycloakdemo.form.DeleteSpaceListForm;
+import com.example.keycloakdemo.form.*;
 import com.example.keycloakdemo.vo.PageParam;
 import com.example.keycloakdemo.vo.PageResult;
 import com.example.keycloakdemo.config.SmartProjectBusinessException;
@@ -12,9 +12,6 @@ import com.example.keycloakdemo.dao.model.Location;
 import com.example.keycloakdemo.dao.model.Project;
 import com.example.keycloakdemo.dao.model.SpaceNodeInfo;
 import com.example.keycloakdemo.dao.model.SpaceSet;
-import com.example.keycloakdemo.form.SpaceListForm;
-import com.example.keycloakdemo.form.UpdateNodeForm;
-import com.example.keycloakdemo.form.UpdateSpaceSetForm;
 import com.example.keycloakdemo.vo.SpaceSetVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -48,7 +45,7 @@ public class SpaceSetService {
                            SpaceNodeDao spaceNodeDao, LocationDao locationDao,
                            ProjectDao projectDao,
                            SpaceNodeService spaceNodeService
-                          ) {
+    ) {
         this.spaceSetDao = spaceSetDao;
         this.spaceNodeDao = spaceNodeDao;
         this.locationDao = locationDao;
@@ -133,7 +130,7 @@ public class SpaceSetService {
         //判断查询的空间节点是否为空 如果不为空则删除然后同步到公寓
         if (!CollectionUtils.isEmpty(list)) {
             //获取空间节点中为顶层节点的id
-            list = list.stream().filter(spaceNodeInfo ->  NumberUtils.LONG_ZERO.equals(spaceNodeInfo.getParentId()))
+            list = list.stream().filter(spaceNodeInfo -> NumberUtils.LONG_ZERO.equals(spaceNodeInfo.getParentId()))
                     .collect(Collectors.toList());
             SpaceNodeInfo spaceNodeInfo = list.get(NumberUtils.INTEGER_ZERO);
             spaceNodeService.deleteNode(spaceNodeInfo.getId());
@@ -142,13 +139,14 @@ public class SpaceSetService {
 
     }
 
-    public void addSpaceSet(UpdateSpaceSetForm updateSpaceSetForm){
+    public void addSpaceSet(AddSpaceSetForm addSpaceSetForm) {
         spaceSetDao.addSpaceSet(SpaceSet.builder()
-                .eid(updateSpaceSetForm.getEid())
-                .eidName(updateSpaceSetForm.getName())
+                .eid(addSpaceSetForm.getEid())
+                .eidName(addSpaceSetForm.getName())
+                .serviceId(addSpaceSetForm.getServiceId())
                 .label(NumberUtils.INTEGER_ONE)
-                .name(updateSpaceSetForm.getName())
-                .phone(updateSpaceSetForm.getName())
+                .name(addSpaceSetForm.getName())
+                .phone(addSpaceSetForm.getName())
                 .build());
     }
 

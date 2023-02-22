@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/BaseError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/BusinessCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/SystemCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/ShiroConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/JWTUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/ActiveUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="feat:添加git忽略文件">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/config/ResponseEntityAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/RedisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/RedisUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-project-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-project-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/SpaceSetAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/SpaceSetAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/SpaceSetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/SpaceSetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,16 +74,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\git_project\smart-project-gateway\src\main\java\com\example\keycloakdemo\enums" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.keycloakdemo.form" />
       <recent name="com.example.keycloakdemo.util" />
       <recent name="com.example.keycloakdemo.enums" />
       <recent name="com.example.keycloakdemo.shiro" />
       <recent name="com.example.keycloakdemo.vo" />
-      <recent name="com.example.keycloakdemo.config" />
     </key>
   </component>
   <component name="RunManager">
@@ -123,7 +120,10 @@
       <workItem from="1676794079259" duration="308000" />
       <workItem from="1676884467999" duration="321000" />
       <workItem from="1676976653099" duration="4197000" />
-      <workItem from="1677048524043" duration="2375000" />
+      <workItem from="1677048524043" duration="5331000" />
+      <workItem from="1677086526558" duration="625000" />
+      <workItem from="1677087583923" duration="64000" />
+      <workItem from="1677087772747" duration="3110000" />
     </task>
     <task id="LOCAL-00001" summary="feat:测试提交">
       <created>1676794314181</created>
@@ -132,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676794314181</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat:添加shiro权限认证，只有添加token才会进入接口请求。否则会当做未认证的接口拦截">
+      <created>1677055665903</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677055665903</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat:添加git忽略文件">
+      <created>1677056009665</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677056009665</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +165,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:测试提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:测试提交" />
+    <MESSAGE value="feat:添加shiro权限认证，只有添加token才会进入接口请求。否则会当做未认证的接口拦截" />
+    <MESSAGE value="feat:添加git忽略文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:添加git忽略文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -162,24 +178,19 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/JWTUtils.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/config/ResponseEntityAdvice.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

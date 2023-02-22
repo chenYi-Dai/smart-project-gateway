@@ -1,5 +1,6 @@
 package com.example.keycloakdemo.controller;
 
+import com.example.keycloakdemo.form.AddSpaceSetForm;
 import com.example.keycloakdemo.form.DeleteSpaceListForm;
 import com.example.keycloakdemo.form.SpaceListForm;
 import com.example.keycloakdemo.form.UpdateSpaceSetForm;
@@ -65,10 +66,10 @@ public class SpaceSetAction {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    @ApiOperation(value = "添加空间集信息", notes = "deleteSpaceList")
-    public void addSpaceCollect(@RequestBody UpdateSpaceSetForm updateSpaceSetForm) {
-        log.info("deleteSpaceCollect request param | {}", updateSpaceSetForm);
-        spaceSetService.addSpaceSet(updateSpaceSetForm);
+    @ApiOperation(value = "添加空间集信息", notes = "addSpaceCollect")
+    public void addSpaceCollect(@RequestBody AddSpaceSetForm addSpaceSetForm) {
+        log.info("deleteSpaceCollect request param | {}", addSpaceSetForm);
+        spaceSetService.addSpaceSet(addSpaceSetForm);
     }
 
 

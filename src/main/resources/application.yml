@@ -18,6 +18,10 @@ spring:
       enabled : true
       additional-paths : src/main/java
       exclude : static/**,public/**
+  redis:
+    host: 192.168.204.129
+    port: 6379
+    password: admin
 server:
   port: 8600
 mybatis:
