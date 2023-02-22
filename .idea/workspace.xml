@@ -103,7 +103,7 @@
     </configuration>
     <configuration name="ProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="smart-project-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.keycloakdemo.ProjectApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.project.ProjectApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
