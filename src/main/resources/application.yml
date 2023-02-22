@@ -1,6 +1,6 @@
 spring:
   application:
-    name: keycloakDemo
+    name: smart-project-gateway
   ldap:
     urls: ldap://localhost:389
     base: dc=maxcrc,dc=com
@@ -10,7 +10,7 @@ spring:
     druid:
       username: root
       password: root
-      url: jdbc:mysql://192.168.159.130:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&socketTimeout=10000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://192.168.204.129:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&socketTimeout=10000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
       driver-class-name: com.mysql.cj.jdbc.Driver
       connection-properties: config.decrypt=false;
   devtools:

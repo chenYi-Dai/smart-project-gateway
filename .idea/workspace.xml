@@ -5,21 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/BaseError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/BusinessCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/enums/SystemCodeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/JWTUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/ActiveUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-project-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-project-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
         <option name="localRepository" value="D:\cwx569773\software\rep_maven" />
+        <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="D:\cwx569773\software\maven-3.0.5\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -29,13 +60,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workspace/git_project/smart-project-gateway/src/main/java/com/example/keycloakdemo/enums&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;59915b93de60b196e3439477cd55e983&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\git_project\smart-project-gateway\src\main\java\com\example\keycloakdemo\enums" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.keycloakdemo.util" />
+      <recent name="com.example.keycloakdemo.enums" />
+      <recent name="com.example.keycloakdemo.shiro" />
+      <recent name="com.example.keycloakdemo.vo" />
+      <recent name="com.example.keycloakdemo.config" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -66,6 +121,9 @@
       <option name="presentableId" value="Default" />
       <updated>1676794077314</updated>
       <workItem from="1676794079259" duration="308000" />
+      <workItem from="1676884467999" duration="321000" />
+      <workItem from="1676976653099" duration="4197000" />
+      <workItem from="1677048524043" duration="2375000" />
     </task>
     <task id="LOCAL-00001" summary="feat:测试提交">
       <created>1676794314181</created>
@@ -94,5 +152,36 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:测试提交" />
     <option name="LAST_COMMIT_MESSAGE" value="feat:测试提交" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/NodeAction.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/JWTFilter.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

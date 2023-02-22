@@ -26,6 +26,8 @@ public class UserVO {
     private String name;
     @ApiModelProperty("企业id")
     private Long eid;
+    @ApiModelProperty(value = "password密码")
+    private String password;
     @ApiModelProperty("手机号")
     private String phone;
     @ApiModelProperty("状态")
