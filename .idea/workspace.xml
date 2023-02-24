@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="feat:添加git忽略文件">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/config/ResponseEntityAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/RedisController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/RedisUtil.java" afterDir="false" />
+    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="feat:修改包名称">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-project-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-project-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/SpaceSetAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/SpaceSetAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/SpaceSetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/service/SpaceSetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/ProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/dao/PersonAttributeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/PersonAttributeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +117,9 @@
       <workItem from="1677048524043" duration="5331000" />
       <workItem from="1677086526558" duration="625000" />
       <workItem from="1677087583923" duration="64000" />
-      <workItem from="1677087772747" duration="3110000" />
+      <workItem from="1677087772747" duration="5467000" />
+      <workItem from="1677136893017" duration="599000" />
+      <workItem from="1677168447967" duration="2632000" />
     </task>
     <task id="LOCAL-00001" summary="feat:测试提交">
       <created>1676794314181</created>
@@ -146,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677056009665</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat:添加统一返回数据格式&#10;1.返回接口返回默认数据格式&#10;2.添加redis连接">
+      <created>1677091019764</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677091019764</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat:修改包名称">
+      <created>1677091236906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677091236906</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,28 +177,30 @@
     <MESSAGE value="feat:测试提交" />
     <MESSAGE value="feat:添加shiro权限认证，只有添加token才会进入接口请求。否则会当做未认证的接口拦截" />
     <MESSAGE value="feat:添加git忽略文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:添加git忽略文件" />
+    <MESSAGE value="feat:添加统一返回数据格式&#10;1.返回接口返回默认数据格式&#10;2.添加redis连接" />
+    <MESSAGE value="feat:修改包名称" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:修改包名称" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/controller/NodeAction.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/controller/NodeAction.java</url>
           <line>42</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/shiro/UserRealm.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java</url>
           <line>48</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/util/JWTUtils.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/util/JWTUtils.java</url>
           <line>47</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/keycloakdemo/config/ResponseEntityAdvice.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/config/ResponseEntityAdvice.java</url>
           <line>24</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>

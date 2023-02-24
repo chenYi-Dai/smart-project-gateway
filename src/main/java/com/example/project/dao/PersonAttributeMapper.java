@@ -5,6 +5,7 @@ import org.springframework.ldap.NamingException;
 import org.springframework.ldap.core.AttributesMapper;
 
 import javax.naming.directory.Attributes;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PersonAttributeMapper implements AttributesMapper {
     @Override

@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan(value = {"com.example.keycloakdemo.dao.mapper"})
+@MapperScan(value = {"com.example.project.dao.mapper"})
 @SpringBootApplication
 public class ProjectApplication {
 
