@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="feat:修改包名称">
+    <list default="true" id="ae869378-79e2-4a03-9ace-3803ccacb184" name="Default Changelist" comment="feat:修复启动失败问题">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/controller/DemoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/UserInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/mapper/UserInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/mapper/UserInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/form/AddUserForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/form/GetUserInfoForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/project/util/MD5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/ProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/ProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/dao/PersonAttributeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/dao/PersonAttributeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-project-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-project-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/controller/RedisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/controller/RedisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/form/LoginInfoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/form/LoginInfoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/service/LdapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/service/LdapService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project/util/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project/util/JWTUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -50,6 +73,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -57,7 +81,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/workspace/git_project/smart-project-gateway/src/main/java/com/example/keycloakdemo/enums&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workspace/git_project/smart-project-gateway/src/main/java/com/example/project/dao/mapper&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -73,6 +97,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\git_project\smart-project-gateway\src\main\java\com\example\project\dao\mapper" />
       <recent name="D:\workspace\git_project\smart-project-gateway\src\main\java\com\example\keycloakdemo\enums" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -83,7 +108,7 @@
       <recent name="com.example.keycloakdemo.vo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ProjectApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -95,6 +120,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.project.util.MD5Util" />
+      <module name="smart-project-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.project.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="smart-project-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.project.ProjectApplication" />
@@ -102,6 +140,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MD5Util" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,6 +163,12 @@
       <workItem from="1677087772747" duration="5467000" />
       <workItem from="1677136893017" duration="599000" />
       <workItem from="1677168447967" duration="2632000" />
+      <workItem from="1677228317563" duration="3926000" />
+      <workItem from="1677504197489" duration="449000" />
+      <workItem from="1678115251515" duration="777000" />
+      <workItem from="1678169756813" duration="5552000" />
+      <workItem from="1678260518472" duration="1343000" />
+      <workItem from="1678520539330" duration="7308000" />
     </task>
     <task id="LOCAL-00001" summary="feat:测试提交">
       <created>1676794314181</created>
@@ -156,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677091236906</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat:修复启动失败问题">
+      <created>1677228485237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677228485237</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,30 +235,26 @@
     <MESSAGE value="feat:添加git忽略文件" />
     <MESSAGE value="feat:添加统一返回数据格式&#10;1.返回接口返回默认数据格式&#10;2.添加redis连接" />
     <MESSAGE value="feat:修改包名称" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:修改包名称" />
+    <MESSAGE value="feat:修复启动失败问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:修复启动失败问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/controller/NodeAction.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/project/util/JWTUtils.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/config/ResponseEntityAdvice.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/project/shiro/UserRealm.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

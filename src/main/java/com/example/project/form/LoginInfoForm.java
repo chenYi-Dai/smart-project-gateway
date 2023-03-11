@@ -23,7 +23,7 @@ public class LoginInfoForm {
      * 手机号
      */
     @ApiModelProperty("手机号")
-    private String phone;
+    private String name;
 
     /**
      * 密码

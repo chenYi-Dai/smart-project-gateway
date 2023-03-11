@@ -2,6 +2,7 @@ package com.example.project.shiro;
 
 
 import com.example.project.service.UserService;
+import com.example.project.util.JWTUtils;
 import com.example.project.vo.ActiveUser;
 import com.example.project.vo.UserVO;
 import lombok.SneakyThrows;
@@ -74,25 +75,23 @@ public class UserRealm extends AuthorizingRealm {
         String token = (String) auth.getCredentials();
         log.info("token | {}", token);
         // 解密获得username，用于和数据库进行对比
-        //String username = JWTUtils.getUsername(token);
-        String username = "hehe";
+        String username = JWTUtils.getUsername(token);
         if (username == null) {
             throw new AuthenticationException(" token错误，请重新登入！");
         }
 
-        //User userBean = userService.getUserInfo(username);
-        UserVO userInfo = userService.getUserInfo(username);
+        UserVO userVO = userService.getUserInfo(username);
 
-        if (userInfo == null) {
+        if (userVO == null) {
             throw new AccountException("账号不存在!");
         }
-        /*if(JWTUtils.isExpire(token)){
+        if(JWTUtils.isExpire(token)){
             throw new AuthenticationException(" token过期，请重新登入！");
         }
 
-        if (! JWTUtils.verify(token, username, userInfo.getPassword())) {
+        if (! JWTUtils.verify(token, username, userVO.getPassword())) {
             throw new CredentialsException("密码错误!");
-        }*/
+        }
 
         //如果验证通过，获取用户的角色
         //List<Role> roles= userService.findRolesById(userBean.getId());
@@ -116,7 +115,7 @@ public class UserRealm extends AuthorizingRealm {
         //过滤出url,和用户的权限
         ActiveUser activeUser = new ActiveUser();
         //activeUser.setRoles(roles);
-        activeUser.setUser(userInfo);
+        activeUser.setUser(userVO);
         //activeUser.setMenus(menus);
         Set<String> setList = new HashSet<>();
         activeUser.setUrls(setList);

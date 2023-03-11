@@ -2,8 +2,7 @@ package com.example.project.service;
 
 import com.example.project.dao.PersonAttributeMapper;
 import com.example.project.vo.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ldap.NameNotFoundException;
 import org.springframework.ldap.core.ContextSource;
 import org.springframework.ldap.core.DistinguishedName;
@@ -19,10 +18,9 @@ import javax.naming.ldap.LdapContext;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 public class LdapService {
-
-    private final static Logger log = LoggerFactory.getLogger(LdapService.class);
 
     @Resource
     private LdapTemplate ldapTemplate;

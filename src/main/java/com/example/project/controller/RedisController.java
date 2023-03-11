@@ -31,6 +31,7 @@ public class RedisController {
         redisUtil.set(key,value);
         String redisValue =(String) redisUtil.get(key);
         String value1 =(String) redisUtil.get(value);
+        redisUtil.leftPush("as","askjd");
         return redisValue+"/" +value1;
     }
 

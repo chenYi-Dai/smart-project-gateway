@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.project.dao.mapper.UserInfoMapper">
+
+    <sql id="baseQuery">
+        id,
+        user_id as userId,
+        user_name as name,
+        password,
+        phone,
+        createdUser,
+        modifiedUser,
+        email,
+        createTime
+    </sql>
+
+    <insert id="add">
+        insert into t_user_info (
+            user_id,
+            user_name,
+            password,
+            phone,
+            createdUser,
+            modifiedUser,
+            email,
+            createTime
+        ) values (
+            #{userId},
+            #{name},
+            #{password},
+            #{phone},
+            #{createUser},
+            #{modifiedUser},
+            #{email},
+            now()
+        )
+    </insert>
+    <delete id="deleteUser">
+        delete from t_user_info where id = #{id}
+    </delete>
+
+    <select id="getUser" resultType="com.example.project.dao.model.User">
+        select
+            <include refid="baseQuery"/>
+        from
+            t_user_info
+        where
+            user_id = #{id}
+    </select>
+
+    <select id="getUserByName" resultType="com.example.project.dao.model.User">
+        select
+        <include refid="baseQuery"/>
+        from
+        t_user_info
+        where
+        user_name = #{name}
+    </select>
+</mapper>
