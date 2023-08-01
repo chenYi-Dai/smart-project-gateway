@@ -12,8 +12,7 @@ spring:
         username: nacos
         password: nacos
         register-enabled: true
-        ip: 192.168.10.101
-        port: 8848
+        port: 8600
       config:
         server-addr: 192.168.10.101:8848
         namespace: dae1b3e5-798a-4402-8568-000fa18141d0
