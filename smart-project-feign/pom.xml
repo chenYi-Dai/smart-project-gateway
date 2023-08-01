@@ -52,6 +52,13 @@
             <artifactId>snakeyaml</artifactId>
         </dependency>
 
+        <!-- openfeign yilai -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.4.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>

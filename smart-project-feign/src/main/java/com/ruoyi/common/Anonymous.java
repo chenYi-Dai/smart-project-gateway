@@ -1,4 +1,4 @@
-package com.ruoyi.common.annotation;
+package com.ruoyi.common.feignService;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
