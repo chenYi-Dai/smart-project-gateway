@@ -20,31 +20,8 @@
     <properties>
         <java.version>1.8</java.version>
         <project-version>1.0.0-SNAPSHOT</project-version>
-        <springfox-swagger.version>3.0.0</springfox-swagger.version>
     </properties>
 
-    <dependencies>
-        <!-- swagger  start-->
-
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>1.9.6</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox-swagger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox-swagger.version}</version>
-        </dependency>
-        <!-- swagger  end-->
-
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
