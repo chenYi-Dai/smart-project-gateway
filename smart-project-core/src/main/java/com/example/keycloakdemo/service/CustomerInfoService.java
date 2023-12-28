@@ -1,5 +1,6 @@
 package com.example.keycloakdemo.service;
 
+import com.example.keycloakdemo.annotation.DataEncrypted;
 import com.example.keycloakdemo.dao.CustomerInfoDao;
 import com.example.keycloakdemo.dao.model.CustomerInfo;
 import com.example.keycloakdemo.form.CustomerInfoFrom;

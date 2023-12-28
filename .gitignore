@@ -17,3 +17,5 @@ sas/
 */target
 */*/target
 /.idea/
+/.idea/libraries/*
+/.idea/

@@ -14,7 +14,6 @@ import java.util.List;
 @Repository
 public class CustomerInfoDao {
 
-
     @Resource
     CustomerMapper customerMapper;
 
