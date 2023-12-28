@@ -26,7 +26,7 @@ public class CustomerController {
     CustomerInfoService customerInfoService;
     @GetMapping("getList")
     @ApiOperation(value = "获取列表信息",notes = "testCustomer")
-    public ResponseEntity testCustomer(){
+    public ResponseEntity<List<CustomerInfo>> testCustomer(){
         List<CustomerInfo> customerList = customerInfoService.getCustomerList(CustomerInfoFrom.builder().mobile("13798281964").build());
         return new ResponseEntity(customerList);
     }

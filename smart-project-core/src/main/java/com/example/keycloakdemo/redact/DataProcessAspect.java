@@ -40,7 +40,7 @@ public class DataProcessAspect {
     }
 
     @Around("pointCut()")
-    public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("around start");
         Object[] pointArgs = joinPoint.getArgs();
         for (int i = 0; i < pointArgs.length; i++) {
@@ -63,10 +63,24 @@ public class DataProcessAspect {
         if(ObjectUtils.isEmpty(resultData)){
         }
         if (resultData instanceof Collection){
-            Class classT = (Class) ((ParameterizedType) getClass()
-                    .getGenericSuperclass()).getClass();
-            Field[] fields = classT.getDeclaredFields();
-
+            List<Object> objectList = (List) resultData;
+            for (Object item : objectList) {
+                Class aClass = item.getClass();
+                /*Class classT = (Class) ((ParameterizedType) getClass()
+                        .getGenericSuperclass()).getActualTypeArguments()[0];*/
+                Field[] fields = aClass.getDeclaredFields();
+                JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(item));
+                for(Field field : fields){
+                    SensitiveFields annotation = field.getAnnotation(SensitiveFields.class);
+                    if (annotation != null) {
+                        if(!StringUtils.isEmpty(jsonObject.getString(field.getName()))){
+                            field.setAccessible(true);
+                            field.set(item, AESUtil.decryptTest(jsonObject.getString(field.getName())));
+                            System.out.println("field : " + field.getName() + " \n o encrypt value :" + resultData);
+                        }
+                    }
+                }
+            }
         }else {
             JSONObject jsonObject = (JSONObject)JSONObject.toJSON(resultData);
             String name = resultData.getClass().getName();
@@ -84,7 +98,7 @@ public class DataProcessAspect {
             }
         }
 
-
+        return resultData;
 
     }
 
