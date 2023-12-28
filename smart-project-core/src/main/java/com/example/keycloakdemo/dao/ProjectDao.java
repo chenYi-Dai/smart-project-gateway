@@ -63,6 +63,16 @@ public class ProjectDao {
     }
 
     /**
+     * 添加项目信息
+     *
+     * @param project 项目对象
+     */
+    public Long findAdd(Project project) {
+        projectMapper.add(project);
+        return project.getId();
+    }
+
+    /**
      * 修改项目信息
      *
      * @param project 项目对象

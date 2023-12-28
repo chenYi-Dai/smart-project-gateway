@@ -1,40 +1,19 @@
-/.idea/
+# for eclipse
+.settings/
 
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!/**/src/test/**
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+*/.project
+.classpath
+*/.classpath
+target/
+*.jar
+logs/
+.factorypath
 *.iml
-*.ipr
-target
-log
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-
-### VS Code ###
-.vscode/
-
-###Mac Related###
-*.DS_Store
-.idea/*
-*.iml
-
+*/*.iml
+/.idea
+sas/
+*/target
+*/*/target
+/.idea/

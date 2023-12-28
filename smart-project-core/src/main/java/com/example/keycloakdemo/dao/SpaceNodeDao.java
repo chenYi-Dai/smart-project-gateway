@@ -57,6 +57,15 @@ public class SpaceNodeDao {
     }
 
     /**
+     * 获取节点总数
+     * @param spaceNodeInfo 空间节点信息
+     * @return 返回所有空间节点总数
+     */
+    public int findCount(SpaceNodeInfo spaceNodeInfo){
+        return spaceNodeMapper.count(spaceNodeInfo);
+    }
+
+    /**
      * 获取所有节点总数
      * @param spaceNodeInfo 空间节点信息
      * @return 返回所有空间节点总数

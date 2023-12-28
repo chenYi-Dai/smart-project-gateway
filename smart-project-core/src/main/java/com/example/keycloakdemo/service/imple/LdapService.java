@@ -1,6 +1,7 @@
 package com.example.keycloakdemo.service.imple;
 
 import com.example.keycloakdemo.dao.PersonAttributeMapper;
+import com.example.keycloakdemo.dao.model.CustomerInfo;
 import com.example.keycloakdemo.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -214,4 +215,8 @@ public class LdapService {
         return newContactDN;
     }
 
+    public CustomerInfo test(String cn) {
+        CustomerInfo sakudh = CustomerInfo.builder().mobile("sakudh").build();
+        return sakudh;
+    }
 }

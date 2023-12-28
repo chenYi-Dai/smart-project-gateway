@@ -356,7 +356,7 @@ public class SpaceNodeService {
         SpaceNodeInfo spaceNodeInfo = new SpaceNodeInfo();
         BeanUtils.copyProperties(nodeListForm, spaceNodeInfo);
         PageResult<SpaceNodeInfo> pageResult = new PageResult<>();
-        int count = spaceNodeDao.count(spaceNodeInfo);
+        int count = spaceNodeDao.findCount(spaceNodeInfo);
         log.info("nodeList count | {}", count);
         if (NumberUtils.INTEGER_ZERO == count) {
             pageResult.setTotal(count);
