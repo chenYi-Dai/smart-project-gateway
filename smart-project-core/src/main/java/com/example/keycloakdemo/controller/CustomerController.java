@@ -33,8 +33,9 @@ public class CustomerController {
 
     @PostMapping("/add")
     @ApiOperation( value = "添加客户信息",notes = "testCustomer")
-    public void addCustomer(@RequestBody CustomerInfo from){
+    public ResponseEntity addCustomer(@RequestBody CustomerInfo from){
         customerInfoService.addCustomerInfo(from);
+        return new ResponseEntity<>();
     }
 
 

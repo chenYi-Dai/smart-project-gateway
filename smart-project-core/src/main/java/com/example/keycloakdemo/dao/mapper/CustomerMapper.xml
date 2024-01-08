@@ -24,8 +24,7 @@
         Fremarks as remarks
     </sql>
 
-    <insert id="add" keyColumn="Fgid" keyProperty="gid" useGeneratedKeys="true"
-            parameterType="com.example.keycloakdemo.dao.model.CustomerInfo">
+    <insert id="add" keyColumn="Fgid" parameterType="com.example.keycloakdemo.dao.model.CustomerInfo">
         insert into t_customer_info(Fgid,
                                 Fuid,
                                 Fhist_seq,

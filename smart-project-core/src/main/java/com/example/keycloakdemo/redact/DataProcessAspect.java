@@ -48,19 +48,20 @@ public class DataProcessAspect {
             JSONObject jsonObject = (JSONObject)JSONObject.toJSON(arg);
             Field[] declaredFields = pointArgs[i].getClass().getDeclaredFields();
             for (Field field : declaredFields) {
-                log.info("obj |{} |{}", pointArgs[i], field.getName());
+                log.debug("obj |{} |{}", pointArgs[i], field.getName());
                 SensitiveFields annotation = field.getAnnotation(SensitiveFields.class);
                 if (annotation != null) {
                     if(!StringUtils.isEmpty(jsonObject.getString(field.getName()))){
                         field.setAccessible(true);
                         field.set(pointArgs[i], AESUtil.encrypt(jsonObject.getString(field.getName())));
-                        System.out.println("field : " + field.getName() + " \n o encrypt value :" + pointArgs[i]);
+                        log.debug("field : " + field.getName() + " \n o encrypt value :" + pointArgs[i]);
                     }
                 }
             }
         }
         Object resultData = joinPoint.proceed();
         if(ObjectUtils.isEmpty(resultData)){
+            return resultData;
         }
         if (resultData instanceof Collection){
             List<Object> objectList = (List) resultData;
@@ -76,7 +77,7 @@ public class DataProcessAspect {
                         if(!StringUtils.isEmpty(jsonObject.getString(field.getName()))){
                             field.setAccessible(true);
                             field.set(item, AESUtil.decryptTest(jsonObject.getString(field.getName())));
-                            System.out.println("field : " + field.getName() + " \n o encrypt value :" + resultData);
+                            log.debug("field : " + field.getName() + " \n o encrypt value :" + resultData);
                         }
                     }
                 }
@@ -92,36 +93,12 @@ public class DataProcessAspect {
                     if(!StringUtils.isEmpty(jsonObject.getString(field.getName()))){
                         field.setAccessible(true);
                         field.set(resultData, AESUtil.encrypt(jsonObject.getString(field.getName())));
-                        System.out.println("field : " + field.getName() + " \n o encrypt value :" + resultData);
+                        log.debug("field : " + field.getName() + " \n o encrypt value :" + resultData);
                     }
                 }
             }
         }
-
         return resultData;
-
     }
 
-    @After("pointCut()")
-    public void after(JoinPoint joinPoint) throws Throwable {
-        log.info("after log");
-        Object[] args = joinPoint.getArgs();
-
-        for(int i=0; i<args.length;i++){
-            Object arg = args[i];
-        }
-        Signature signature = joinPoint.getSignature();
-        MethodSignature methodSignature = (MethodSignature) signature;
-        Class returnType = methodSignature.getReturnType();
-        String name = signature.getName();
-
-        Object target = joinPoint.getTarget();
-        Class<?> aClass = target.getClass();
-        Field[] declaredFields = aClass.getDeclaredFields();
-        for(Field field : declaredFields){
-            log.info("field name |{}",field.getName());
-        }
-
-
-    }
 }
