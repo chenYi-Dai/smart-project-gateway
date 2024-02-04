@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.clock.dao.mapper.SpaceSetMapper">
+
+    <insert id="add" keyColumn="id" keyProperty="id" useGeneratedKeys="true"
+            parameterType="com.example.clock.dao.model.SpaceSet">
+        insert into tb_space_set(
+        eid,
+        serviceId,
+        eidName,
+        name,
+        address,
+        createUser,
+        phone,
+        label,
+        createTime,
+        updateTime
+        ) values (
+        #{eid},
+        #{serviceId},
+        #{eidName},
+        #{name},
+        #{address},
+        #{createUser},
+        #{phone},
+        #{label},
+        now(),
+        now()
+        )
+    </insert>
+
+    <update id="update">
+        update
+        tb_space_set
+        <set>
+            <if test="name != null and name != ''">
+                 name = #{name},
+            </if>
+
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            updateTime = now()
+        </set>
+        where
+        id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from tb_space_set where
+        <if test="id != null and id > 0">
+            id = #{id}
+        </if>
+    </delete>
+
+    <select id="count" resultType="java.lang.Integer">
+        select
+        count(*)
+        from
+        tb_space_set
+        <where>
+            1 = 1
+            <if test="serviceId != null and serviceId > 0 ">
+                and serviceId = #{serviceId}
+            </if>
+            <if test="eid != null and eid > 0 ">
+                and eid = #{eid}
+            </if>
+            <if test="code != null and code != ''">
+                and label = #{code}
+            </if>
+            <if test="keywords != null and keywords != ''">
+                and (name like concat('%',#{keywords},'%')
+                or phone like concat('%',#{keywords},'%')
+                or eidName like concat('%',#{keywords},'%')
+                or createUser like concat('%',#{keywords},'%'))
+            </if>
+        </where>
+    </select>
+
+    <select id="list" resultType="com.example.clock.dao.model.SpaceSet">
+        select
+        id,
+        eid,
+        name,
+        eidName,
+        address,
+        createUser,
+        phone,
+        label,
+        createTime
+        from
+        tb_space_set
+        <where>
+            1 = 1
+            <if test="serviceId != null and serviceId > 0 ">
+                and serviceId = #{serviceId}
+            </if>
+            <if test="eid != null and eid > 0 ">
+                and eid = #{eid}
+            </if>
+            <if test="code != null and code != ''">
+                and label = #{code}
+            </if>
+            <if test="keywords != null and keywords != ''">
+                and (name like concat('%',#{keywords},'%')
+                or phone like concat('%',#{keywords},'%')
+                or eidName like concat('%',#{keywords},'%')
+                or createUser like concat('%',#{keywords},'%'))
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+        </where>
+        order by createTime desc
+        <if test="size > 0">
+            limit #{start},#{size}
+        </if>
+    </select>
+
+    <select id="detail" resultType="com.example.clock.dao.model.SpaceSet">
+        select
+        id,
+        eid,
+        name,
+        eidName,
+        address,
+        createUser,
+        phone,
+        label,
+        createTime
+        from
+        tb_space_set
+        where
+        id = #{id}
+    </select>
+
+    <select id="listByName" resultType="com.example.clock.dao.model.SpaceSet">
+        select
+        id,
+        eid,
+        name,
+        eidName,
+        address,
+        createUser,
+        phone,
+        label,
+        createTime
+        from
+        tb_space_set
+        <where>
+            1 = 1
+            <if test="serviceId != null and serviceId > 0 ">
+                and serviceId = #{serviceId}
+            </if>
+            <if test="eid != null and eid > 0 ">
+                and eid = #{eid}
+            </if>
+            <if test="code != null and code != ''">
+                and label = #{code}
+            </if>
+            <if test="keywords != null and keywords != ''">
+                and name = #{keywords}
+            </if>
+        </where>
+        order by createTime desc
+    </select>
+</mapper>

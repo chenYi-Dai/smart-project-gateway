@@ -24,3 +24,15 @@ spring:
 body:
   encrypt:
     key: iamwalkerencrypt
+xxl:
+  job:
+    admin:
+      addresses: http://47.106.146.101:4090/xxl-job-admin
+    accessToken:
+    executor:
+      appname: ${spring.application.name}
+      address:
+      ip:
+      port: 9999
+      logpath: ../logs/xxl-job
+      logretentiondays: 30
