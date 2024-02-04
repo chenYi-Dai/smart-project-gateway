@@ -9,6 +9,7 @@
 target/
 *.jar
 logs/
+log/
 .factorypath
 *.iml
 */*.iml
