@@ -7,7 +7,6 @@ spring:
     nacos:
       discovery:
         server-addr: 47.106.146.101:8848  #nacos服务地址
-        namespace: 6cb004c7-9042-4599-ac44-9049e6ea6883
         group: DEFAULT_GROUP
         username: nacos
         password: nacos

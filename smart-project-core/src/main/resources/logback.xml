@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="SERVER_NAME" value="ao_ucp_aml_support_server"/>
+    <property name="LOG_HOME" value="./logs"/>
+    <!-- value="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%highlight(%level)] [%class{50}.%method] [%file:%line] [trace_id:%X{X-B3-TraceId}] - %msg%n"/>-->
+
+    <property name="LOG_PATTERN"
+            value="[%-5level][%date{yyyy-MM-dd HH:mm:ss.SSS}][ao_ucp_aml_support_server][%thread][%X{traceId}][%c{1.}:%L] - %m%n"/>
+    <conversionRule conversionWord="msg"
+            converterClass="com.fusionbank.monitor.logger.DesensitizedMessageConverter"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/${SERVER_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--
+                   滚动时产生的文件的存放位置及文件名称 %d{yyyy-MM-dd}：按天进行日志滚动
+          %i：当文件大小超过maxFileSize时，按照i进行文件滚动
+          -->
+            <fileNamePattern>${LOG_HOME}/${SERVER_NAME}_%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <maxFileSize>512MB</maxFileSize>
+            <totalSizeCap>10GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <appender name="AsyncFile" class="ch.qos.logback.classic.AsyncAppender">
+        <!--discardingThreshold不设置该值，表示队列剩余大小小于20%开始忽略debug、info、trace日志，设置为0时表示不丢弃任何日志-->
+        <!--        <discardingThreshold>0</discardingThreshold>-->
+        <neverBlock>true</neverBlock>
+        <queueSize>1000</queueSize>
+        <appender-ref ref="FILE"/>
+        <includeCallerData>true</includeCallerData>
+    </appender>
+    <!-- 日志输出级别 -->
+    <logger name="com.fusionbank" level="debug"/>
+    <root level="info">
+        <!-- 使用异步日志 -->
+        <appender-ref ref="AsyncFile"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
