@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: smartProjectService
+  ldap:
+    urls: ldap://localhost:389
+    base: dc=maxcrc,dc=com
+    username: cn=Manager,dc=maxcrc,dc=com
+    password: secret
+  datasource:
+    druid:
+      username: root
+      password: Qaz.2464
+      #url: jdbc:mysql://47.106.146.101:3306/test_sharding?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&socketTimeout=10000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://9.134.238.192:3306/test_sharding?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&socketTimeout=10000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      connection-properties: config.decrypt=false;
+  devtools:
+    restart:
+      enabled : true
+      additional-paths : src/main/java
+      exclude : static/**,public/**
+server:
+  port: 8600
+mybatis:
+  mapper-locations: classpath :**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+async:
+  executor:
+    thread:
+      max_pool_size: 3
+      core_pool_size: 2
+      queue_capacity: 5
+      name:
+        prefix: importDate
+
+# logging:
+#   config: classpath:log4j2.xml
+#   level:
+#     cn.jay.repository: trace
+
+xxl:
+  job:
+    admin:
+      addresses: http://47.106.146.101:4090/xxl-job-admin
+    accessToken:
+    executor:
+      appname: ${spring.application.name}
+      address:
+      ip:
+      port: 9999
+      logpath: ../logs/xxl-job
+      logretentiondays: 30

@@ -2,7 +2,7 @@ spring:
   profiles:
     active: druid
   application:
-    name: smart-project-gateway
+    name: smart-project-core
   cloud:
     nacos:
       discovery:

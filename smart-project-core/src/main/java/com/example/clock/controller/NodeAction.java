@@ -27,7 +27,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/node")
+@RequestMapping(value = "/smart/node")
 @Api(value = "NodeAction", tags = {"空间节点相关"})
 public class NodeAction {
 

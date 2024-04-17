@@ -1,3 +1,4 @@
+DROP
 DROP TABLE IF EXISTS `t_customer_info`;
 CREATE TABLE `t_customer_info`
 (
@@ -50,3 +51,22 @@ CREATE TABLE `t_hist_audit`(
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '修改记录流水表' ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE IF NOT EXISTS `t_xboss_batch_update_job_info` (
+                                                               `job_id` bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '任务ID',
+    `update_type` tinyint(4) NOT NULL COMMENT '更新类型: 1-税务信息, 其它类型待定',
+    `operator` varchar(41) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'xboss操作员',
+    `approver` varchar(41) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'xboss审批员',
+    `operate_time` datetime DEFAULT NULL COMMENT 'xboss操作时间',
+    `approve_time` datetime DEFAULT NULL COMMENT 'xboss审批时间',
+    `upd_cust_no` int NOT NULL COMMENT '更新客户数量',
+    `upd_fail_cust_no` int  COMMENT '更新客户失败数量',
+    `origin_file_path` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '原始文件路径',
+    `result_file_path` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '结果文件路径',
+    `job_status` tinyint(4) NOT NULL COMMENT '任务状态: 1-已完成(成功), 2-进行中, 3-失败',
+    `abort_reason` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '中止原因',
+    `rstatus` tinyint(4) NOT NULL COMMENT '状态 1-正常 2-非正常',
+    `create_time` datetime NOT NULL COMMENT '创建时间',
+    `modify_time` datetime NOT NULL COMMENT '修改时间',
+    key create_type_status_idx(create_time, update_type, rstatus)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='XBOSS批量更新客户信息记录表';

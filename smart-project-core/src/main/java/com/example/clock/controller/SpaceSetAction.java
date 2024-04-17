@@ -1,5 +1,6 @@
 package com.example.clock.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.clock.form.DeleteSpaceListForm;
 import com.example.clock.form.SpaceListForm;
 import com.example.clock.form.UpdateSpaceSetForm;
@@ -11,6 +12,8 @@ import com.example.clock.vo.SpaceSetVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/room")
+@RequestMapping(value = "/smart/room")
 @Api(value = "SpaceSetAction", tags = {"空间集相关"})
 public class SpaceSetAction {
 
@@ -40,6 +43,13 @@ public class SpaceSetAction {
     public PageResult<SpaceSetVO> SpaceSetList(@RequestBody @Validated PageParam<SpaceListForm> pageParam) {
         log.info("spaceList request param | {}", pageParam);
         return spaceSetService.list(pageParam);
+    }
+
+    @RequestMapping(value = "/testPost", method = RequestMethod.POST)
+    @ApiOperation(value = "获取空间集列表信息", notes = "SpaceSetList")
+    public ResponseEntity testPost(@RequestBody @Validated PageParam<SpaceListForm> pageParam) {
+        log.info("spaceList request param | {}", pageParam);
+        return new ResponseEntity(JSONObject.toJSONString(pageParam));
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
