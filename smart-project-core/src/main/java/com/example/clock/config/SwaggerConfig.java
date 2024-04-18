@@ -35,8 +35,8 @@ public class SwaggerConfig{
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("CD系统")
-                .description("CD系统接口文档")
+                .title("Demo系统")
+                .description("Demo系统接口文档")
                 .version("2.0.0")
                 .build();
     }

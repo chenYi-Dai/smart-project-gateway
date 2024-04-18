@@ -61,7 +61,7 @@
     <modules>
         <module>smart-project-core</module>
         <module>smart-project-feign</module>
-        <module>smart-scene-service</module>
+        <!--<module>smart-scene-service</module>-->
     </modules>
     <packaging>pom</packaging>
 

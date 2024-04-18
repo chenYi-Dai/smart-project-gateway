@@ -25,46 +25,24 @@
     </sql>
 
     <insert id="add" keyColumn="Fgid" parameterType="com.example.clock.dao.model.CustomerInfo">
-        insert into t_customer_info(Fgid,
-                                Fuid,
-                                Fhist_seq,
-                                Fgsm_code,
-                                Fmobile,
-                                Femail,
-                                Fcust_no,
-                                Fname,
-                                Fen_name,
-                                Fsex,
-                                Fcus_status,
-                                Fopen_time,
-                                Fclose_time,
-                                Fspecial,
-                                Fstatus,
-                                Fsign,
-                                Fcreate_time,
-                                Fmodify_time,
-                                Fremarks)
-        values (#{gid},
-                #{uid},
-                #{histSeq},
-                #{gsmCode},
-                #{mobile},
-                #{email},
-                #{custNo},
-                #{name},
-                #{enName},
-                #{sex},
-                #{cusStatus},
-                now(),
-                now(),
-                #{special},
-                #{status},
-                #{sign},
-                now(),
-                now(),
-                #{remarks})
+        insert into t_customer_info (Fgid, Fuid, Fhist_seq, Fparty_num, Fcust_no, Fname, Fen_name, Ffirst_name,
+                                     Fmiddle_name, Flast_name, Fsex, Fbirthday, Fbirth_country, Fnation,
+                                     Fresident_country, Fcus_status, Fhkvb_employee_ind, Fgsm_code, Fmobile, Femail, Femail_verify, Femail_ci,
+                                     Fstatus, Fsign, Fcreate_time, Fmodify_time, Fopen_time, Fclose_time, Fspecial,
+                                     Fekyc_qa_remarks, Fremarks, Fverified_en_address, Feducation_type, FfinancialContract, Fpurpose, Fposition_info,
+                                     Fchannel_source, Fchannel)
+        values (#{gid,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{histSeq}, #{partyNum,jdbcType=VARCHAR},
+                #{custNo,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR},
+                #{firstName,jdbcType=VARCHAR}, #{middleName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR},
+                #{sex,jdbcType=TINYINT}, #{birthday,jdbcType=DATE}, #{birthCountry,jdbcType=VARCHAR},
+                #{nation,jdbcType=VARCHAR}, #{residentCountry,jdbcType=VARCHAR}, #{cusStatus},
+                #{hkvbEmployeeInd,jdbcType=TINYINT}, #{gsmCode,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR}, #{emailVerify,jdbcType=TINYINT}, #{emailCi,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{sign,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{openTime,jdbcType=TIMESTAMP},
+                #{closeTime,jdbcType=TIMESTAMP}, #{special,jdbcType=VARCHAR},
+                #{ekycQaRemarks,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{verifiedEnAddress,jdbcType=VARCHAR}, #{educationType,jdbcType=TINYINT}
+                   ,#{financialContract,jdbcType=VARCHAR}, #{purpose,jdbcType=VARCHAR}, #{positionInfo,jdbcType=VARCHAR}, #{channelSource,jdbcType=VARCHAR}, #{channel,jdbcType=TINYINT})
     </insert>
-
     <update id="update">
         update
             t_customer_info
@@ -196,24 +174,24 @@
         <where>
 
             <if test="gid != null and gid !='' ">
-                tl.Fgid = #{gid}
+                tl.Fgid = #{customerInfoFrom.gid}
             </if>
             <if test="uid != null and uid !='' ">
-                and tl.Fuid = #{uid}
+                and tl.Fuid = #{customerInfoFrom.uid}
             </if>
             <if test="mobile != null  ">
-                and tl.Fmobile = #{mobile}
+                and tl.Fmobile = #{customerInfoFrom.mobile}
             </if>
             <if test="email != null  ">
-                and tl.Femail = #{email}
+                and tl.Femail = #{customerInfoFrom.email}
             </if>
             <if test="name != null  ">
-                and tl.Fname = #{name}
+                and tl.Fname = #{customerInfoFrom.name}
             </if>
         </where>
         order by createTime desc
         <if test="size > 0">
-            limit #{start},#{size}
+            limit #{customerInfoFrom.start},#{customerInfoFrom.size}
         </if>
     </select>
     <select id="projectNodeListCount" resultType="java.lang.Integer">
