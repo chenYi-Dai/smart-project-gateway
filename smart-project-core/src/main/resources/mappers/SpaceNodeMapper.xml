@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.clock.dao.mapper.SpaceNodeMapper">
+
+    <insert id="add" keyColumn="id" keyProperty="id" useGeneratedKeys="true"
+            parameterType="com.example.clock.dao.model.SpaceNodeInfo">
+        insert into  tb_space_node_info(
+            eid,
+            parentId,
+            spaceSetId,
+            name,
+            orderNum,
+            level,
+            isLast,
+            locationName,
+            createTime,
+            updateTime
+        ) values (
+            #{eid},
+            #{parentId},
+            #{spaceSetId},
+            #{name},
+            #{orderNum},
+            #{level},
+            #{isLast},
+            #{locationName},
+            now(),
+            now()
+        )
+    </insert>
+
+    <update id="update">
+        update
+            tb_space_node_info
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="isLast != null">
+                isLast = #{isLast},
+            </if>
+            <if test="locationName != null and locationName != ''">
+                locationName = #{locationName},
+            </if>
+            updateTime = now()
+        </set>
+        where
+            id = #{id}
+    </update>
+
+    <update id="updateOrderNum">
+        update tb_space_node_info set orderNum = orderNum+1 WHERE orderNum >= #{orderNum} and parentId = #{parentId}
+    </update>
+
+    <delete id="delete">
+        delete from tb_space_node_info where
+        <if test="id != null and id > 0">
+            id = #{id}
+        </if>
+    </delete>
+
+    <delete id="deleteBySpaceSetId">
+        delete from tb_space_node_info where  spaceSetId = #{spaceId}
+    </delete>
+
+    <select id="count" resultType="java.lang.Integer">
+        select
+            count(*)
+        from
+            tb_space_node_info
+        <where>
+            1 = 1
+            <if test="eid != null and eid != ''">
+                and eid = #{eid}
+            </if>
+            <if test="level != null ">
+                and level = #{level}
+            </if>
+            <if test="spaceSetId != null and spaceSetId != ''">
+                and spaceSetId = #{spaceSetId}
+            </if>
+            <if test="parentId != null and parentId > 0 ">
+                and parentId = #{parentId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
+
+    <select id="list" resultType="com.example.clock.dao.model.SpaceNodeInfo">
+        select
+            id,
+            eid,
+            name,
+            parentId,
+            orderNum,
+            spaceSetId,
+            level,
+            isLast,
+            locationName,
+            createTime,
+            updateTime
+        from
+            tb_space_node_info
+        <where>
+            1 = 1
+            <if test="eid != null and eid != ''">
+               and eid = #{eid}
+            </if>
+            <if test="level != null ">
+                and level = #{level}
+            </if>
+            <if test="parentId != null  and parentId > 0 ">
+                and parentId = #{parentId}
+            </if>
+            <if test="spaceSetId != null and spaceSetId != ''">
+                and spaceSetId = #{spaceSetId}
+            </if>
+            <if test="name != null and name != ''">
+               and name = #{name}
+            </if>
+            <if test="locationName != null and locationName != ''">
+                and locationName = #{locationName}
+            </if>
+        </where>
+        order by orderNum
+    </select>
+
+    <select id="detail" resultType="com.example.clock.dao.model.SpaceNodeInfo">
+        select
+            id,
+            eid,
+            name,
+            parentId,
+            spaceSetId,
+            level,
+            orderNum,
+            isLast,
+            locationName,
+            createTime,
+            updateTime
+        from
+            tb_space_node_info
+        where
+            id = #{id}
+    </select>
+
+    <select id="allChildCount" resultType="java.lang.Integer">
+        select
+            count(*)
+        from
+            tb_space_node_info
+        <where>
+            1 = 1
+            <if test="isLast != null">
+                and isLast = #{isLast}
+            </if>
+            <if test="spaceSetId != null">
+                and spaceSetId = #{spaceSetId}
+            </if>
+            <if test="eid != null">
+                and eid = #{eid}
+            </if>
+        </where>
+    </select>
+
+    <select id="detailBySpaceSetIdAndParentId" resultType="com.example.clock.dao.model.SpaceNodeInfo">
+         select
+            id,
+            eid,
+            name,
+            parentId,
+            spaceSetId,
+            level,
+            orderNum,
+            isLast,
+            locationName,
+            createTime,
+            updateTime
+        from
+            tb_space_node_info
+        where
+        spaceSetId = #{spaceSetId}
+        and
+            parentId = #{parentId}
+    </select>
+
+
+</mapper>

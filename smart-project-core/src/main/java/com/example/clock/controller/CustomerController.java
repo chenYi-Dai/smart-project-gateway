@@ -1,6 +1,7 @@
 package com.example.clock.controller;
 
 
+import com.example.clock.annotation.TestAnnotation;
 import com.example.clock.dao.model.CustomerInfo;
 import com.example.clock.form.CustomerInfoFrom;
 import com.example.clock.service.CustomerInfoService;
@@ -22,6 +23,8 @@ public class CustomerController {
 
     @Resource
     CustomerInfoService customerInfoService;
+
+    @TestAnnotation
     @GetMapping("getList")
     @ApiOperation(value = "获取列表信息",notes = "testCustomer")
     public ResponseEntity<List<CustomerInfo>> testCustomer(){
@@ -29,6 +32,7 @@ public class CustomerController {
         return new ResponseEntity(customerList);
     }
 
+    @TestAnnotation
     @PostMapping("/pageList")
     @ApiOperation(value = "获取列表信息",notes = "testCustomer")
     public TestVO pageList(@RequestBody CustomerInfoFrom customerInfoFrom){

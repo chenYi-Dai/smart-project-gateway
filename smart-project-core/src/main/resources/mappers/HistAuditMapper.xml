@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.clock.dao.mapper.HistAuditMapper">
+
+    <sql id="baseColumn">
+        Fpm_key_value as id,
+        Fuid as uid,
+        Fhist_seq as histSeq,
+        Faudit_seq as auditSeq,
+        Faudit_ext_tags as auditExtTags,
+        Faudit_tag as auditTag,
+        Fstatus as status,
+        Fsign as sign,
+        Fcreate_time as createTime,
+        Fmodify_time as modifyTime,
+        Foperator as operator,
+        Fapprover as appRover,
+        Fcreate_time as operateTime,
+        Fmodify_time as appRoveTime
+    </sql>
+
+    <resultMap id="BaseResultMap" type="com.example.clock.dao.model.HistAudit">
+        <id column="Fpm_key_value" jdbcType="BIGINT" property="id"/>
+        <id column="Fuid" jdbcType="BIGINT" property="uid"/>
+        <id column="Fhist_seq" jdbcType="BIGINT" property="histSeq"/>
+        <id column="Faudit_seq" jdbcType="BIGINT" property="auditSeq"/>
+        <result column="Faudit_tag" jdbcType="VARCHAR" property="auditTag"/>
+        <result column="Faudit_ext_tags" jdbcType="VARCHAR" property="auditExtTags"/>
+        <result column="Foperator" jdbcType="VARCHAR" property="operator"/>
+        <result column="Fapprover" jdbcType="VARCHAR" property="appRover"/>
+        <result column="Foperate_time" jdbcType="TIMESTAMP" property="operateTime"/>
+        <result column="Fapprove_time" jdbcType="TIMESTAMP" property="appRoveTime"/>
+        <result column="Fstatus" jdbcType="TINYINT" property="status"/>
+        <result column="Fsign" jdbcType="VARCHAR" property="sign"/>
+        <result column="Fcreate_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="Fmodify_time" jdbcType="TIMESTAMP" property="modifyTime"/>
+    </resultMap>
+
+    <insert id="add" parameterType="com.example.clock.dao.model.HistAudit">
+        insert into t_hist_audit(
+                Fpm_key_value,
+                Fuid,
+                Fhist_seq,
+                Faudit_seq,
+                Faudit_tag,
+                Faudit_ext_tags,
+                Foperator,
+                Fapprover,
+                Foperate_time,
+                Fapprove_time,
+                Fstatus,
+                Fsign,
+                Fcreate_time,
+                Fmodify_time)
+        values (#{id},
+                #{uid},
+                #{histSeq},
+                #{auditSeq},
+                #{auditTag},
+                #{auditExtTags},
+                #{operator},
+                #{appRover},
+                now(),
+                now(),
+                #{status},
+                #{sign},
+                now(),
+                now())
+    </insert>
+
+
+    <select id="queryList" resultMap="BaseResultMap"
+            parameterType="com.example.clock.form.CustomerInfoFrom">
+        select
+            <include refid="baseColumn"/>
+        from
+            t_hist_audit tl
+        <where>
+
+            <if test="id != null and id !='' ">
+                tl.Fpm_key_value = #{id}
+            </if>
+            <if test="uid != null and uid !='' ">
+                and tl.Fuid = #{uid}
+            </if>
+            <if test="status != null  ">
+                and tl.Fstatus = #{status}
+            </if>
+        </where>
+        order by createTime desc
+        <if test="size > 0">
+            limit #{start},#{size}
+        </if>
+    </select>
+
+</mapper>
