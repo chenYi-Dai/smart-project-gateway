@@ -1,12 +1,12 @@
 package com.example.clock.controller;
 
 
+import com.example.clock.adapter.CustomerUserServiceImpl;
 import com.example.clock.annotation.TestAnnotation;
 import com.example.clock.dao.model.CustomerInfo;
-import com.example.clock.form.CustomerInfoFrom;
 import com.example.clock.service.CustomerInfoService;
+import com.example.clock.strategy.TestServiceImpl;
 import com.example.clock.vo.ResponseEntity;
-import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -28,23 +28,8 @@ public class CustomerController {
     @GetMapping("getList")
     @ApiOperation(value = "获取列表信息",notes = "testCustomer")
     public ResponseEntity<List<CustomerInfo>> testCustomer(){
-        List<CustomerInfo> customerList = customerInfoService.getCustomerList(CustomerInfoFrom.builder().mobile("13798281964").build());
-        return new ResponseEntity(customerList);
-    }
-
-    @TestAnnotation
-    @PostMapping("/pageList")
-    @ApiOperation(value = "获取列表信息",notes = "testCustomer")
-    public TestVO pageList(@RequestBody CustomerInfoFrom customerInfoFrom){
-        PageInfo<CustomerInfo> pageInfo = customerInfoService.pageList(customerInfoFrom);
-        List<CustomerInfo> list = pageInfo.getList();
-        TestVO build = TestVO.builder().build();
-        build.setList(list);
-        build.setPage(pageInfo.getPages());
-        build.setPageNum(pageInfo.getPageNum());
-        build.setTotal(pageInfo.getTotal());
-        build.setPageSize(pageInfo.getPageSize());
-        return build;
+        customerInfoService.addCustomerInfo(CustomerInfo.builder().mobile("13798281964").build());
+        return new ResponseEntity();
     }
 
     @PostMapping("/add")
@@ -61,5 +46,17 @@ public class CustomerController {
         return new ResponseEntity<>();
     }
 
+    @Resource
+    private TestServiceImpl testService;
+
+    @Resource
+    private CustomerUserServiceImpl service;
+
+    @GetMapping("/testFactory")
+    @ApiOperation( value = "添加客户信息",notes = "updateCustomer")
+    public void testFactory(){
+        service.queryCustomerInfo();
+        testService.testFactory();
+    }
 
 }

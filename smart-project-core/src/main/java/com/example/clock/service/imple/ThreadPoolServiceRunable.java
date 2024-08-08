@@ -1,6 +1,5 @@
 package com.example.clock.service.imple;
 
-import com.example.clock.dao.SpaceNodeDao;
 import com.example.clock.dao.model.SpaceNodeInfo;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -16,12 +15,11 @@ import java.util.List;
 @Slf4j
 public class ThreadPoolServiceRunable implements Runnable {
 
-    private SpaceNodeDao spaceNodeDao;
+
 
     private List<SpaceNodeInfo> spaceNodeInfos;
 
-    public ThreadPoolServiceRunable(SpaceNodeDao spaceNodeDao, List<SpaceNodeInfo> spaceNodeInfos) {
-        this.spaceNodeDao = spaceNodeDao;
+    public ThreadPoolServiceRunable( List<SpaceNodeInfo> spaceNodeInfos) {
         this.spaceNodeInfos = spaceNodeInfos;
     }
 
@@ -31,7 +29,7 @@ public class ThreadPoolServiceRunable implements Runnable {
 
         log.info("ThreadPoolServiceRunable start threadName | {}",Thread.currentThread().getName());
         for(int i=0;i<spaceNodeInfos.size();i++){
-            spaceNodeDao.add(spaceNodeInfos.get(i));
+            System.out.println("1111");
         }
     }
 }

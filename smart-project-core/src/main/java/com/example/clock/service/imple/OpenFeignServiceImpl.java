@@ -1,3 +1,4 @@
+/*
 package com.example.clock.service.imple;
 
 import com.example.clock.dao.SpaceNodeDao;
@@ -5,7 +6,7 @@ import com.example.clock.dao.model.SpaceNodeInfo;
 import com.example.clock.vo.SpaceNodeVO;
 import com.ruoyi.common.entry.ResponseEntity;
 import com.ruoyi.common.feignService.OpenFeignService;
-import com.ruoyi.common.prarm.NodeListForm;
+import com.example.clock.form.NodeListForm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -32,3 +33,4 @@ public class OpenFeignServiceImpl implements OpenFeignService {
         throw new Exception("cuowu");
     }
 }
+*/

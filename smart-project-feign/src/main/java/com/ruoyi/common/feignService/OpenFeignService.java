@@ -1,7 +1,6 @@
 package com.ruoyi.common.feignService;
 
 import com.ruoyi.common.entry.ResponseEntity;
-import com.ruoyi.common.feignService.impl.DefaultFailCallBackTest;
 import com.ruoyi.common.prarm.NodeListForm;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;

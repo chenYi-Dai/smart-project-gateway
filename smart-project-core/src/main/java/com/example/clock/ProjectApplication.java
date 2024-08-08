@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @MapperScan(value = {"com.example.clock.dao.mapper"})
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 //@TestAnnotation
 public class ProjectApplication {
 

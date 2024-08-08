@@ -1,3 +1,4 @@
+/*
 package com.example.clock.config;
 
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
@@ -46,3 +47,4 @@ public class XxlJobConfig {
     }
 
 }
+*/
