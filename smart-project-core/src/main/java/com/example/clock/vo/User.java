@@ -5,13 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.ldap.odm.annotations.Entry;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entry(objectClasses = { "inetOrgPerson", "top"},base = "ou=user")
 public class User {
 
 

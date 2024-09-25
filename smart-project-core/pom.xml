@@ -15,7 +15,7 @@
     <properties>
         <java.version>1.8</java.version>
         <swagger.version>3.0.0</swagger.version>
-
+        <dynamic-tp-spring-boot-starter-apollo.version>1.0.2</dynamic-tp-spring-boot-starter-apollo.version>
     </properties>
 
     <dependencies>
@@ -23,6 +23,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--动态线程池引入-->
+        <dependency>
+            <groupId>io.github.lyh200</groupId>
+            <artifactId>dynamic-tp-spring-boot-starter-apollo</artifactId>
+            <version>${dynamic-tp-spring-boot-starter-apollo.version}</version>
+        </dependency>
+        <!--动态线程池引入 end-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -91,7 +99,7 @@
         <!-- validation end  -->
 
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-ldap</artifactId>
         </dependency>
@@ -100,7 +108,7 @@
             <groupId>com.unboundid</groupId>
             <artifactId>unboundid-ldapsdk</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
         <!-- mysql连接 -->
         <dependency>

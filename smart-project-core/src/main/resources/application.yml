@@ -1,11 +1,6 @@
 spring:
   application:
     name: keycloakDemo
-#  ldap:
-#    urls: ldap://localhost:389
-#    base: dc=maxcrc,dc=com
-#    username: cn=Manager,dc=maxcrc,dc=com
-#    password: secret
   datasource:
     druid:
       username: root
@@ -15,9 +10,9 @@ spring:
       connection-properties: config.decrypt=false;
   devtools:
     restart:
-      enabled : true
-      additional-paths : src/main/java
-      exclude : static/**,public/**
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**,public/**
 server:
   port: 8600
 mybatis:
@@ -32,3 +27,17 @@ async:
       queue_capacity: 5
       name:
         prefix: importDate
+xxl:
+  job:
+    admin:
+      addresses: http://sit1xxljob.vb.woa.com:8182/xxl-job-admin
+    accessToken:
+    executor:
+      appname: ao-ucp-aml-support-server-sit1
+      ip:
+      port: 40599
+      logpath: ../logs/xxl-job
+      logretentiondays: 30
+corn:
+  task:
+    state: mq

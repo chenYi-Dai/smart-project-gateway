@@ -9,4 +9,5 @@ public class MessageInfoVo {
     private String userName;
 
     private String password;
+
 }
