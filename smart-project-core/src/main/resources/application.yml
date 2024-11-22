@@ -13,6 +13,10 @@ spring:
       enabled: true
       additional-paths: src/main/java
       exclude: static/**,public/**
+
+
+  main:
+    allow-bean-definition-overriding: true
 server:
   port: 8600
 mybatis:
@@ -41,3 +45,9 @@ xxl:
 corn:
   task:
     state: mq
+cebs:
+  feign:
+    middle:
+      aml:
+        stub:
+          mode: mock

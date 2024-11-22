@@ -12,5 +12,7 @@ public interface CustomerMapper {
     int add(CustomerInfo customerInfo);
     void update(CustomerInfo customerInfo);
 
+    CustomerInfo query(CustomerInfo customerInfo);
+
 /*    List<CustomerInfo> queryList(CustomerInfoFrom customerInfoFrom);*/
 }

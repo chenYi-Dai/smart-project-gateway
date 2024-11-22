@@ -1,3 +1,4 @@
+/*
 package com.example.clock.controller;
 
 
@@ -39,6 +40,13 @@ public class CustomerController {
         return new ResponseEntity<>();
     }
 
+    @PostMapping("/add")
+    @ApiOperation( value = "添加客户信息",notes = "addCustomer")
+    public ResponseEntity addCustomer(@RequestBody List<CustomerInfo> from){
+        customerInfoService.batchInsertCustomer(from);
+        return new ResponseEntity<>();
+    }
+
     @PostMapping("/update")
     @ApiOperation( value = "添加客户信息",notes = "updateCustomer")
     public ResponseEntity updateCustomer(@RequestBody CustomerInfo from){
@@ -60,3 +68,4 @@ public class CustomerController {
     }
 
 }
+*/
