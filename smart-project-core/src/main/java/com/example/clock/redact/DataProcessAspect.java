@@ -34,6 +34,12 @@ public class DataProcessAspect {
         log.info("pointCut start");
     }
 
+    /**
+     * 对添加注解的参数进行加解密
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("around start");
